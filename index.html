@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lívia ❤️ Kayky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="conteudo">
+            <h1>Nossa história é a prova que o amor tem lógica ❤️</h1>
+            <p>Lívia & Kayky</p>
+
+            <div class="contador-container">
+                <p class="titulo-contador">Estamos juntos há:</p>
+                <div id="contador">
+                    <div class="tempo-bloco"><span id="dias">00</span><label>Dias</label></div>
+                    <div class="tempo-bloco"><span id="horas">00</span><label>Horas</label></div>
+                    <div class="tempo-bloco"><span id="minutos">00</span><label>Min</label></div>
+                    <div class="tempo-bloco"><span id="segundos">00</span><label>Seg</label></div>
+                </div>
+            </div>
+
+            <button onclick="rolarParaHistoria()">
+                Começar nossa história
+            </button>
+        </div>
+    </section>
+
+    <section id="historia">
+        <h2>Nossa História</h2>
+        <p>
+            Em um universo de variáveis,
+            você foi a constante que deu sentido a tudo.
+        </p>
+    </section>
+
+    <section id="momentos">
+        <h2>Nossos Momentos ❤️</h2>
+<p class="aviso-jogos">
+    🎮 Cada foto guarda um jogo especial. Clique e descubra! ❤️
+</p>
+        <audio id="musica" loop>
+            <source src="iris.mp3.mp3" type="audio/mp3">
+        </audio>
+
+        <button onclick="tocarMusica()">🎵 Tocar música</button>
+
+        <div class="galeria">
+
+    <div class="polaroid" onclick="abrirJogo(1)">
+        <img src="foto1.jpg.jpeg" alt="Foto do casal 1">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(2)">
+        <img src="foto2.jpg.jpeg" alt="Foto do casal 2">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(3)">
+        <img src="foto3.jpg.jpeg" alt="Foto do casal 3">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(4)">
+        <img src="foto4.jpg.jpeg" alt="Foto do casal 4">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(5)">
+        <img src="foto5.jpg.jpeg" alt="Foto do casal 5">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(6)">
+        <img src="foto6.jpg.jpeg" alt="Foto do casal 6">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(7)">
+        <img src="foto7.jpg.jpeg" alt="Foto do casal 7">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(8)">
+        <img src="foto8.jpg.jpeg" alt="Foto do casal 8">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(9)">
+        <img src="foto9.jpg.jpeg" alt="Foto do casal 9">
+    </div>
+
+    <div class="polaroid" onclick="abrirJogo(10)">
+        <img src="foto10.jpg.jpeg" alt="Foto do casal 10">
+    </div>
+
+</div>
+
+        <div class="final">
+           <button class="coracao"
+        onclick="abrirCarta()"
+        title="Abrir carta">
+    ❤️
+</button>
+        </div>
+    </section>
+
+    <div id="carta" class="carta">
+        <div class="conteudo-carta">
+            <span class="fechar" onclick="fecharCarta()">×</span>
+            <h2>Para Kayky ❤️</h2>
+            <p>
+                Que felicidade poder compartilhar a vida com você, desfrutar de cada momento que passamos juntos, ficar feliz por cada conquista, inclusive as que ainda não aconteceram. Eu te amo, eu amo a gente e principalmente, eu amo a vida que você me mostrou e mostra todos os dias.
+            </p>
+        </div>
+    </div>
+
+    <div id="modalJogoVelha" class="modal">
+        <div class="modal-conteudo">
+
+            <span class="fechar-modal" onclick="fecharJogoVelha()">×</span>
+            
+            <h2>Jogo da Velha ❤️</h2>
+            <div id="tabuleiro">
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+                <button class="casa" onclick="jogar(this)"></button>
+            </div>
+            <p id="mensagemJogo"></p>
+        </div>
+    </div>
+
+    <div id="modalCoracoes" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" onclick="fecharPegueCoracoes()">×</span>
+            <h2>Pegue os Corações ❤️</h2>
+            <p>Pontos: <span id="pontuacao">0</span>/10</p>
+            <div id="areaJogoCoracoes">
+                <div id="cesta">💖</div>
+            </div>
+            <p id="mensagemCoracoes"></p>
+        </div>
+    </div>
+
+    <div id="modalPulo" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" onclick="fecharJogoPulo()">×</span>
+            <h2>Pule os Obstáculos ❤️</h2>
+            <p>Aperte ESPAÇO para pular</p>
+            <div id="areaPulo">
+                <div id="personagem">❤️</div>
+                <div id="obstaculo">💔</div>
+            </div>
+            <p id="mensagemPulo"></p>
+        </div>
+    </div>
+
+    <div id="modalQuiz" class="modal">
+        <div class="modal-conteudo">
+            <span class="fechar-modal" onclick="fecharQuiz()">×</span>
+            <h2>Quiz do Casal ❤️</h2>
+            <br>
+            <h3 id="perguntaQuiz">Pergunta aqui</h3>
+            <br>
+            <div id="opcoesQuiz" style="display: flex; flex-direction: column; gap: 10px;"></div>
+            <p id="mensagemQuiz" style="margin-top: 15px; font-weight: bold;"></p>
+        </div>
+    </div>
+<div id="modalCoracao" class="modal">
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharEncontreCoracao()">×</span>
+
+        <h2>Encontre o Coração ❤️</h2>
+
+        <p>Encontre o ❤️ escondido!</p>
+
+        <div id="areaCoracao"></div>
+
+        <p id="mensagemCoracao"></p>
+
+    </div>
+</div>
+<div id="modalMemoria" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharMemoria()">×</span>
+
+        <h2>Jogo da Memória ❤️</h2>
+
+        <div id="tabuleiroMemoria"></div>
+
+        <p id="mensagemMemoria"></p>
+
+    </div>
+
+</div>
+
+<div id="modalBola" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharBola()">×</span>
+
+        <h2>Mantenha o Amor no Ar ❤️</h2>
+
+        <p>Pontos: <span id="tempoBola">0</span>/20</p>
+
+        <div id="areaBola"></div>
+
+        <p id="mensagemBola"></p>
+
+    </div>
+
+</div>
+
+<div id="modalPuzzle" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharPuzzle()">×</span>
+
+        <h2>Quebra-Cabeça ❤️</h2>
+
+        <p>Monte a nossa foto!</p>
+
+        <div id="tabuleiroPuzzle"></div>
+
+        <p id="mensagemPuzzle"></p>
+
+    </div>
+
+</div>
+
+<div id="modalSorte" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharSorte()">×</span>
+
+        <h2>Jogo da Sorte 🎁❤️</h2>
+
+        <p>Encontre o presente especial!</p>
+
+        <div id="areaSorte"></div>
+
+        <p id="mensagemSorte"></p>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+<div id="modalFinal" class="modal">
+
+    <div class="modal-conteudo">
+
+        <span class="fechar-modal" onclick="fecharFinal()">×</span>
+
+        <h2>Parabéns, meu amor ❤️</h2>
+
+        <p>
+            Você completou todos os desafios e encontrou cada pedacinho da nossa história.
+        </p>
+
+        <p>
+            Mas ainda tenho uma última pergunta...
+        </p>
+
+        <button onclick="mostrarPerguntaFinal()">
+            ❤️ Abrir Surpresa Final ❤️
+        </button>
+
+        <div id="perguntaFinal" style="display:none; margin-top:20px;">
+
+            <h3>
+                Você aceita continuar vivendo essa linda história comigo todos os dias? ❤️
+            </h3>
+
+            <br>
+
+            <button onclick="respostaSim()">
+                SIM ❤️
+            </button>
+
+        </div>
+
+        <p id="mensagemFinal"></p>
+
+    </div>
+
+</div>
+</body>
+</html>
